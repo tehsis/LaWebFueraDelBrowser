@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>La web dentro y fuera del browser</title>
+
+<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+<meta name="author" content="Hakim El Hattab">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/one-mozilla.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+</script>
+
+<!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <section>
+      <h1>Tecnologías web</h1>
+      <h2>Dentro y fuera del browser</h2>
+      <p>
+      <a href="http://tehsis.com.ar/">@tehsis</a>
+      </p>
+    </section>
+    <section data-state="blue">
+      <section>
+        <header>
+          <h1>Tecnologias web</h1>   
+        </header>
+        <p><span class="fragment">HTML</span> <span class="fragment"> + CSS</span><span class="fragment"> + JS</span></p>
+      </section>
+      <section>
+        <h2>Ventajas</h2>
+        <ul>
+          <li class="fragment">Tenemos acceso a millones de recursos a través de la web</li>
+          <li class="fragment">Por lo tanto, es sumamente sencillo distribuir nuestra aplicación</li>
+          <li class="fragment">Una corta barrera de inicio</li>
+          <li class="fragment">Si hacemos desarrollo web, es dificil que nos escapemos</li>
+        </ul>
+      </section>
+    </section>
+    <section data-state="red">
+      <section>
+        <h1>Apps</h1>
+        <p class="fragment">Aplicaciones, que normalmente se instalan desde un store (appstore, playstore, marketplace, etc) y que se pueden instalar independientemente en un dispositivo (pc, tablet, telefono) haciendo uso de los recursos del mismo (llamadas, gps, contactos, etc.)</p> 
+      </section>
+      <section>
+        <h2>Ventajas</h2>
+        <ul>
+          <li class="fragment">Pueden acceder a los recursos del dispositivo</li>
+          <li class="fragment">Conocen perfectamente el sistema sobre el que se ejecutan</li>
+          <li class="fragment">Esto hace que, normalemnte, funcionen más rapido</li>
+          <li class="fragment">SDKs con componentes reusables</li>
+        </ul>
+      </section>
+    </section>
+    <section>
+      <img src="img/installing.png" alt="installing" />
+    </section>
+    <section data-state="red">
+      <section>
+        <h1>Vamos a unir los dos mundos</h1>
+      </section>
+    </section>
+    <section data-state="red">
+      <section>
+        <h1>Node.js</h1>
+        <p>Nos permite ejecutar código js en un entorno dentro de nuestro sistema operativo.</p>
+        <p>Incluso incluye modulos para acceder a recursos del mismo (filesystem, procesos, etc)</p>
+      </section>
+      <section>
+        <h2>Podemos escribir <em>servidores</em> gracias a su modulo de http</h2>
+        <img src="img/server.png" alt="server" />
+      </section>
+      <section>
+        <h2>O aplicaciones de escritorio gracias a herramientas tales como <strong>node-webkit</strong></h2>
+        <img src="img/cuevanastorm.png" alt="cuevana storm">
+      </section>
+      <section>
+        <h2>O herramientas para automatizar tareas</h2>
+      </section>
+      <section>
+        <h2>O lo que se les ocurra que pueda correr en un SO</h2>
+      </section>
+    </section>
+    <section data-state="blue">
+      <section>
+        <header>
+          <h1>Cordova</h1>
+          <h3>...o Phonegap</h3>
+        </header>
+      </section>
+      <section>
+        <p>Nos permite crear, <em>mediante plugins</em> aplicaciones que accedan a
+        <em>recursos nativos</em></p>
+      </section>
+      <section>
+        <p>Se instala a través de <em>npm</em> y provee una CLI para crear y administrar nuestro proyecto.</p>
+        <code>
+          $npm install -g cordova
+        </code>
+      </section>
+      <section>
+        <h2>Ventajas</h2>
+        <ul>
+          <li class="fragment">Soporte para múltiples plataformas (Android y iOS quizá los más difundidos)</li>
+          <li class="fragment">Un mismo codebase para todas las plataformas.</li>
+          <li class="fragment">Permite definir diferencias entre cada plataforma para ajustar la UX.</li>
+          <li class="fragment">Se puede usar de forma embebida en otras aplicaciones <em>nativas</em> (junto con otros componentes nativos)</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Desventajas</h2>
+        <ul>
+          <li class="fragment">Sus capacidades estan atadas al entorno base (se actualizan menos frecuente que un browser)</li>
+          <li class="fragment">Frustración ante efectos y widgets <em>nativos</em></li>
+          <li class="fragment">¿Escucharon que los desarrolladores de Android se quejan de la fragmentación?</li>
+        </ul>
+      </section>
+
+    </section>
+    <section data-state="red">
+      <section>
+        <h1>FirefoxOS</h1>
+        <p class="fragment">Apps desarrolladas con tecnologias web. Pueden ser instaladas por el usuario, son independientes y pueden
+        ser diseñadas para funcionar offline.</p>
+      </section>
+      <section>
+        <header>
+          <h3>Instaladas por el usuario</h3>
+        </header>
+        <pre>
+<code>
+{
+  "name": "Tabu",
+  "description": "¡Juga al clásico juego de Tabu con tus amigos!",
+  "version": "1.1.1",
+  "launch_path": "../index.html",
+  "fullscreen": "true",
+  "icons": {
+    "60": "/img/tabu-icon.png",
+    "128": "/img/tabu-icon-128.png"
+  },
+  "developer": {
+    "name": "Tehsis",
+    "url": "http://tehsis.com.ar"
+  },
+  "default_locale": "es"
+}
+</code>
+        </pre>
+        <p><span class="fragment">Alojadas/empaquetdas</span><span class="fragment"> - Privilegiadas <span class="fragment">- Certificadas</span></p>
+          <aside class="notes">
+            <dl>
+              <dt>Alojadas/empaquetadas</dt>
+              <dd>Se encuentran en un servidor o en un zip con todo su contenido</dd>
+              <dt>Privilegiadas</dt>
+              <dd>Deben estar firmadas por un marketplace.</dd>
+              <dt>Con privilegios</dt>
+              <dd>Vienen preinstaladas</dd>
+            </dl>
+          </aside>
+        </section>
+        <section>
+          <header>
+            <h2>Son <em>independientes</em></h2>
+            <h3>Cada app funciona en un sandbox</h3>
+          </header>
+          <p class="fragment">
+          <ul>
+            <li class="fragment">Poseen sus propios permisos</li>
+            <li class="fragment">Sus propias cookies/storage</li>
+            <li class="fragment">Aunque carguen el mismo sitio, son origines distinto</li>
+          </ul>
+          </p>
+          <aside class="notes">Ejemplificar con el login de facebook.</aside>
+        </section>
+      </section>
+
+      <section data-state="blue" >
+        <section>
+          <h2>Devices API</h2>
+          <p>
+          Conjunto de APIs que nos permite acceder al hardware y/o recursos de los dispositivos.
+          <aside><a href="https://developer.mozilla.org/es/docs/WebAPI">Documentación en MDN</a></aside>
+          </p>
+          <aside class="notes">
+            Anteriormente se llamaban WebAPI.<br />
+            Permiten que nuestras apps interactuen con el "contenedor" (SO/dispositivo)
+          </aside>
+        </section>
+
+        <section>
+          <h2>Veamos algunas</h2>
+        </section>
+
+        <section>
+          <header>
+            <h3>API de vibración</h3>
+          </header>
+          <pre>
+                        <code>
+    // Vibrar por un segundo (o mil milesimas)
+    window.navigator.vibrate(1000);
+    // Hagamos bailar nuestro telefono
+    window.navigator.vibrate([200, 100, 200]);
+                        </code>
+          </pre>
+        </section>
+        <section>
+          <header>
+            <h3>API de bateria</h3>
+          </header>
+          <pre>
+<code>
+    // Podemos saber el nivel de bateria del dispositivo
+    console.log(window.navigator.battery.level)
+    // O saber si esta enchufado
+    consoe.log(window.navigator.charging);
+</code>
+          </pre>
+          <p>Actualmente poseo <span style="color: red; font-weight: bold;" id="battery-level"></span> de bateria </p>
+          <script language="javascript">
+(function() {
+ document.addEventListener("DOMContentLoaded", function() {
+   var elm =  document.getElementById("battery-level");
+   elm.innerHTML = (navigator.battery.level * 100) + "%";
+   navigator.battery.addEventListener("levelchange", function() {
+     elm.innerHTML = (navigator.battery.level * 100) + "%";
+     }, false);
+   });
+ })();
+          </script>
+        </section>
+        <section>
+          <header>
+            <h3>API de notificaciones</h3>
+          </header>
+          <pre>
+<code class="cs">
+    var notificacion = 
+        navigator.mozNotification.createNotification("Atencion!", "Te llego una notificacion");
+    notificacion.show();
+</code>
+          </pre>
+          <button id="notification-example">Apretame!</button>
+          <style>
+#notification-example {
+  background-color: red;
+  border: medium none;
+  width: 29%;
+  height: 50px;
+  font-size: 24px;
+}
+          </style>
+          <script language="javascript">
+var notifButton = document.getElementById('notification-example');
+
+notifButton.addEventListener('click', function() {
+    new Notification('BarcampNEA', {
+icon: './img/Untitled.png',
+body: '¡Estamos hablando de Devices API!'
+});
+    });
+          </script>
+        </section>
+        <section>
+          <header>
+            <h3>API de Luz ambiental</h3>
+            <pre>
+<code>
+window.addEventListener('devicelight', function(event) {
+    if (event.value < 50) {
+        console.log("Esta oscuro");
+    } else {
+        console.log("Esta clarito");
+    }
+});
+</code>
+<aside class="notes">
+    <ol>
+        <li>Un evento para detectar cambios</li>
+        <li>Experimental. Firefox 22. No todos los SO. FirefoxOS OK.</li>
+        <li>Tapar la camara de la notebook</li>
+        <li>Usar linterna del cel</li>
+    </ol>
+</aside>
+            </pre>
+            <p id="api-normal">¡Que lindo se ve!</p>
+            <p id="api-light" style="display: none;">¡Para! ¡Me encandilas!</p>
+            <p id="api-dark" style="display: none;">¡Che! ¡No veo nada!</p>
+            <script>
+window.addEventListener('devicelight', function(event) {
+    var light_element = document.getElementById("api-light");
+    var dark_element = document.getElementById("api-dark");
+    var normal_element = document.getElementById("api-normal");
+    console.log(event.value);
+    if (event.value  < 2)  {
+    light_element.style.display = "none";
+    dark_element.style.display = "block";
+    normal_element.style.display = "none";
+    } else if (event.value > 200) {
+    light_element.style.display = "block";
+    normal_element.style.display = "none";
+    dark_element.style.display = "none";
+    } else {
+    normal_element.style.display = "block";
+    dark_element.style.display = "none";
+    light_element.style.display = "none";
+    }
+    });
+            </script>
+          </header>
+        </section>
+        <section>
+          <header>
+            <h3>Y muchas más...</h3>
+          </header>
+          <p>
+          <ul>
+            <li class="fragment">Geolocalización</li>
+            <li class="fragment">Bluetooth</li>
+            <li class="fragment">Próximidad</li>
+            <li class="fragment">Orientación</li>
+            <li class="fragment">Radio FM</li>
+            <li class="fragment"> Etc ... </li>
+          </ul>
+          </p>
+        </section>
+      </section>
+      <section>
+        <h1>Recomendaciones/Principios</h1>
+      </section>
+      <section>
+        <h2>Olvidarnos de pedir y responder páginas...</h2>
+        <p><img src="img/severphp.png" alt="server" /></p>
+      </section>
+      <section>
+        <h2>...Para pedir servicios y datos.</h2>
+        <p><img src="img/rest.png" alt="server" /></p>
+      </section>
+      <section>
+        <h2>Y haganse amigos de...</h2>
+        <ul>
+          <li class="fragment">LocalStorage</li>
+          <li class="fragment">IdexedDB</li>
+          <li class="fragment">Application Cache</li>
+          <li class="fragment">Y de cualquier otra tecnologia que pueda correr en un browser</li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h2>Sugerencias generales</h2>
+        <ul>
+          <li class="fragment">En pantallas táctiles, cada segundo cuenta.</li>
+          <li class="fragment">Diseño responsive.</li>
+          <li class="fragment">No matar la bateria.</li>
+          <li class="fragment">Cuidar detalles para que no se enoje Apple.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Herramientas</h2>
+        <p class="fragment">¡Sorpresa! Las mismas que usamos en web</p>
+        <p class="fragment">Y todo el poder <em>nativo</em>.</p>
+      </section>
+    </section>
+    <section>
+      <h2>¡Gracias!</h2>
+      <p>¿Preguntas?</p>
+    </section>
+  </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
+center: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+
+</script>
+
+</body>
+</html>
